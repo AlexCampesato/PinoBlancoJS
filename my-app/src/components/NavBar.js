@@ -1,5 +1,7 @@
 import React from 'react';
-import './NavBar.css'
+import './NavBar.css';
+
+import Cartwidget from './CartWidget';
 
 export default function NavBar() {
 return (<div>
@@ -10,7 +12,9 @@ return (<div>
         <li>Nosotros</li>
         <li>Productos</li>
         <li>Contacto</li>
+        <Cartwidget />
     </ul>
+    
     </div>
 );
 }
