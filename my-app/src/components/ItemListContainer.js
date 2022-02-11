@@ -4,7 +4,7 @@ import ItemCount from './ItemCount';
 
 import { getItems } from '../api/api';
 import ItemList from './ItemList';
-
+import ItemDetail from './ItemDetail';
 
 
 

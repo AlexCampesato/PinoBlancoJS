@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import './ItemList.css'
+
 
 
 export default function ItemList({products}){
@@ -6,15 +8,16 @@ export default function ItemList({products}){
     
 
     return (
-        <div>
+        <div className="ItemList-container">
 
            {
                 products.map(function(producto){
                     return(
-                        <div key={producto.id}>
-                            <img src={producto.pictureUrl} alt="Imagen del producto"/>
-                            <p className="price">{producto.price}</p>
-                            <p className="title">{producto.title}</p>
+                        <div className="item-container" key={producto.id}>
+                            <img className="item-picture" src={producto.pictureUrl} alt="Imagen del producto"/>
+                            <p className="item-title">{producto.title}</p>
+                            <p className="item-price">{producto.price}</p>
+                            
                         </div>
                     )
                 })
