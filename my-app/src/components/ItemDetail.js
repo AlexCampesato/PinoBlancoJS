@@ -1,6 +1,6 @@
 import ItemDetailContainer from "./ItemDetailContainer"
 
-export default function  ItemDetail(item){
+export default function  ItemDetail({item}){
 
     return(
         <div className="item-container" key={item.id}>
