@@ -1,16 +1,17 @@
 import './ItemList.css';
 import {Link} from 'react-router-dom';
 
-export default function Item({Item}) {
+export default function Item({item}) {
     return(
         <div className="item-container">
-            
-                <img src={producto.pictureUrl} alt="Imagen del producto"/>
-            <div className="detail-container">
-                <Link to={'/producto'}/>
-                <p className="item-price">{producto.price}</p>
-                <p className="item-title">{producto.title}</p>
+            <Link to={`/producto/${item.id}`}>
+                <img className='item-picture' src={item.pictureUrl} alt="Imagen del producto"/>
+            </Link><div className="detail-container">
+                
+                <p className="item-price">USD  {item.price}</p>
+                <p className="item-title">{item.title}</p>
             </div>
+            
         </div>
     )
 }

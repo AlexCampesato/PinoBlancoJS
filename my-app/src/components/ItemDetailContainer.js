@@ -5,20 +5,20 @@ import ItemDetail from './ItemDetail';
 import {useParams} from 'react-router-dom'
 
 export default function ItemDetailContainer(){
-    const [data, setData] = useState({});
-    const {productoId}=useParams();
+    const [item, setItem] = useState({});
+    const {ItemId}=useParams();
 
     useEffect(()=>{
-    async function buscarProductos(){
-        const items = await getItems();
 
-        setData(items.find((i)=> i.id===productoId));
-        console.log(items)
-    }
-    buscarProductos();
-},[productoId]);
+        getItems().then((items) =>{
+            const item = items.find((i) => i.id === Number(ItemId));
+            setItem(item);
+        }).catch((error) =>{
+            console.log(error);
+        })
+    }, [ItemId]);
 
-return !data ? <div>cargando…</div> : <ItemDetail item={data}  />
+return !item ? <div>cargando…</div> : <ItemDetail item={item}  />
 
 
 }
