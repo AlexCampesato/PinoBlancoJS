@@ -1,14 +1,14 @@
-import ItemCount from "./ItemCount"
-import { useEffect, useState } from "react";
+import React,{ useState } from "react";
 import { Link } from 'react-router-dom';
+import Counter from './Counter';
 
-export default function  ItemDetail({item}){
-    const [itemCount, setItemCount] = useState();
+const ItemDetail = ({item})=>{
+    const [showButton, setShowButton] = useState(false);
     
-    function onAddItem(newItemCount) {
-        console.log(newItemCount);
-        setItemCount(newItemCount);
-    }                                                            
+    const onAdd = (cantidad) =>{
+        console.log(cantidad);
+        setShowButton(true);
+    };                                                       
     
     return(
         <div className="item-detail">
@@ -21,9 +21,10 @@ export default function  ItemDetail({item}){
                 </div>
                
                 {
-                 ! itemCount ?
-                    <ItemCount stock={5} initial={1} onAdd={onAddItem}/> :
-                    <Link to="/cart">Ir al Carrito</Link>
+                 showButton ? 
+                   (<Link to="/cart">Ir al Carrito</Link>) : 
+                   (<Counter stock={5} initial={1} onAdd={onAdd}/>)
+                    
                 }
                
                 
@@ -32,3 +33,4 @@ export default function  ItemDetail({item}){
         </div>
     )
 }
+export default ItemDetail;
