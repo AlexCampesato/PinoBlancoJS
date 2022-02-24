@@ -26,7 +26,7 @@ const ItemDetail = ({item})=>{
                 {
                  showButton ? 
                    (<Link to="/cart">Ir al Carrito</Link>) : 
-                   (<Counter stock={5} initial={1} onAdd={onAdd}/>)
+                   (<Counter stock={item.stock} initial={1} onAdd={onAdd}/>)
                     
                 }
                
