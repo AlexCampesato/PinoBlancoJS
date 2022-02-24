@@ -1,6 +1,8 @@
 ul{
-    justify-content: center;
+    text-align: center;
     background-color: orangered;
+    margin-top: 0px;
+    padding: 5px;
 }
 ul li{
     display: inline;

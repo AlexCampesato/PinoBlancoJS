@@ -13,7 +13,7 @@ return (<div>
         <li>Nosotros</li>
         <li>Productos</li>
         <li>Contacto</li>
-        <Cartwidget />
+        <Link to="/cart"><li><Cartwidget /></li></Link>
     </ul>
     
     </div>
