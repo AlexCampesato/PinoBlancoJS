@@ -1,6 +1,7 @@
-ul{
+.ul-nav{
+
     text-align: center;
-    background-color: orangered;
+    background: url(https://png.pngtree.com/thumb_back/fw800/background/20190828/pngtree-clean-brown-wooden-panel-background-for-multipurpose-image_310057.jpg);
     margin-top: 0px;
     padding: 5px;
 }
@@ -9,5 +10,10 @@ ul li{
     list-style: none;
     margin-right: 2rem;
     font-size: 1.5rem;
+    color: aliceblue;
     }
+.nav-title{
+    font-size: 35px;
+    text-decoration: 'none';
+}
 
