@@ -21,6 +21,8 @@ const Cart=() =>{
                     <Link to={'/'}><h3>Click Aqui</h3></Link>
               </div>)
     } else {
+        const precioTotal = cart.reduce((acc, producto)=>(acc += producto.price * producto.cantidad),0)
+        console.log(precioTotal)
         return (
                 <ul>
                     {cart.map((producto) => (
@@ -34,10 +36,13 @@ const Cart=() =>{
                             
                         </div>
                     ))}
+                    <h3>El precio total a pagar es: {precioTotal}</h3>
                     
                     <button onClick={vaciarCarrito}>Vaciar Carrito</button>
                 </ul>
     )
+
+    
 }};
 
 export default Cart;

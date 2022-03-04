@@ -30,8 +30,7 @@ const CartContextProvider = ({children}) =>  {
         const filterItem = copy.filter(item => item.id !== id)
         
         setCart(filterItem)
-        
-        }
+    }
 
     return (
         <CartContext.Provider value={{cart, addToCart, vaciarCarrito, deleteItem}}>

@@ -6,7 +6,7 @@ import CarritoImagen from './carrito.svg'
 
 const Cartwidget=() =>{
 
-    const {cart}=useContext(CartContext);
+    const {cart, cantidadTotal}=useContext(CartContext);
     const [isCartEmpty, setIsCartEmpty] = useState(true)
 
 
@@ -20,7 +20,14 @@ const Cartwidget=() =>{
         return (<img src=""/>
               )
     } else {
-        return (<img src={CarritoImagen} alt="Carrito" class='Carrito' />)
+        const cantidadTotal = cart.reduce((acc, item)=>(acc += item.cantidad),0)
+        return (
+           <>
+        <img src={CarritoImagen} alt="Carrito" class='Carrito' />
+        <h4 className="cantidad-cart">{cantidadTotal}</h4>
+        </>)
+
+    
 }};
 
 export default Cartwidget;
